@@ -3,8 +3,8 @@ POST http://127.0.0.1:8000/api/register
 Content-Type: application/json
 
 {
-    "name": "Ulises2",
-    "email": "Ulises2@example.com",
+    "name": "Ulises",
+    "email": "Ulises@example.com",
     "password": "contraseña123",
     "password_confirmation": "contraseña123"
 }
@@ -14,7 +14,7 @@ POST http://127.0.0.1:8000/api/login
 Content-Type: application/json
 
 {
-    "email": "Ulises2@example.com",
+    "email": "Ulises@example.com",
     "password": "contraseña123"
 }
 

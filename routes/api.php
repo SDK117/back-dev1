@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('refresh-token', [AuthController::class, 'refreshToken']);
     Route::get('search', [AuthController::class, 'search']);
     Route::delete('/user/delete', [AuthController::class, 'deleteAccount'])->middleware('auth:sanctum');
+
+    Route::get('/admin/users', [AdminUserController::class, 'index']);
+    Route::put('/admin/users/{id}/status', [AdminUserController::class, 'toggleAccountStatus']);
 
 });

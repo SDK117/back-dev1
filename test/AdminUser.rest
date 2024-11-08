@@ -1,0 +1,22 @@
+#### Obtener todos los usuarios (requiere autenticación)
+GET http://127.0.0.1:8000/api/admin/users
+Authorization: Bearer 2|Yjqfa8ng60dS4Jkf2Zp28KBcoU2s8CGJBWdaKayq03e81dfa
+
+#### Activar cuenta de usuario con ID 1
+PUT http://127.0.0.1:8000/api/admin/users/1/status
+Authorization: Bearer 2|Yjqfa8ng60dS4Jkf2Zp28KBcoU2s8CGJBWdaKayq03e81dfa
+Content-Type: application/json
+
+{
+    "is_active": true
+}
+
+
+#### Desactivar cuenta de usuario con ID 1
+PUT http://127.0.0.1:8000/api/admin/users/1/status
+Authorization: Bearer 2|Yjqfa8ng60dS4Jkf2Zp28KBcoU2s8CGJBWdaKayq03e81dfa
+Content-Type: application/json
+
+{
+    "is_active": false
+}
