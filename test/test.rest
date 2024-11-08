@@ -3,8 +3,8 @@ POST http://127.0.0.1:8000/api/register
 Content-Type: application/json
 
 {
-    "name": "Nuevo Usuario",
-    "email": "usuario@example.com",
+    "name": "Ulises2",
+    "email": "Ulises2@example.com",
     "password": "contraseña123",
     "password_confirmation": "contraseña123"
 }
@@ -14,7 +14,7 @@ POST http://127.0.0.1:8000/api/login
 Content-Type: application/json
 
 {
-    "email": "usuario@example.com",
+    "email": "Ulises2@example.com",
     "password": "contraseña123"
 }
 
@@ -22,27 +22,27 @@ Content-Type: application/json
 
 ### Obtener información del usuario autenticado (Get User)
 GET http://127.0.0.1:8000/api/user
-Authorization: Bearer 3|lx8oObu85wiMMWzPefWQaBiGPDpO7PNwF0z20nzTbe5e9677
+Authorization: Bearer 9|o4iJveIkwMRpQ4X8OftG30gvF9MFq1fTB8Yn1oMY000080cb
 
 
 ### Cerrar sesión (Logout)
 POST http://127.0.0.1:8000/api/logout
-Authorization: Bearer 2|E51d13Iq0VuOyRt2OOtYm9jQGVT4DvZz1whHg47Edd1d6e1f
+Authorization: Bearer 4|jvaaFNxA8hO5ve2VuucmSQ7WkmFJQ56wxOEidH7dfbdf5bf0
 
 
 ### búsqueda
 
 GET http://127.0.0.1:8000/api/search?query=Nuevo Usuario
-Authorization: Bearer 7|GdRbhLQN2m7ALP1T6R7t0ak7kuiOzDN7x2UYd8Mm573f9d73
+Authorization: Bearer 9|o4iJveIkwMRpQ4X8OftG30gvF9MFq1fTB8Yn1oMY000080cb
 
 ### ### Cerrar sesión (Logout a todo)
 
 POST http://127.0.0.1:8000/api/logout-all
-Authorization: Bearer 8|UFo40ePgyAkFus7g6htcFthdx98kTOis9tNZwpeL86eb5e74
+Authorization: Bearer 10|XdWkNyVJuaVhS371zeuZPCY2K1jZT0ANyGN096Kg6daf62b2
 Content-Type: application/json
 
 
 ### ### para refrescar el token
 POST http://127.0.0.1:8000/api/refresh-token
-Authorization: Bearer 7|GdRbhLQN2m7ALP1T6R7t0ak7kuiOzDN7x2UYd8Mm573f9d73
+Authorization: Bearer 9|o4iJveIkwMRpQ4X8OftG30gvF9MFq1fTB8Yn1oMY000080cb
 Content-Type: application/json
