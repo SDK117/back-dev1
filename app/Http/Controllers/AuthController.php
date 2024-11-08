@@ -122,4 +122,28 @@ class AuthController extends Controller
 
         return $this->sendResponse('Search results', $users);
     }
+
+    public function deleteAccount(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|string',
+        ]);
+
+        $user = $request->user();
+
+        // Verifica la contraseña
+        if (!Hash::check($request->password, $user->password)) {
+            return $this->sendResponse('Invalid password', null, 403);
+        }
+
+        try {
+            $user->tokens()->delete();
+            $user->delete();
+
+            return $this->sendResponse('User account deleted successfully');
+        } catch (\Exception $e) {
+            return $this->sendResponse('Error deleting account', $e->getMessage(), 500);
+        }
+    }
+
 }

@@ -27,4 +27,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout-all', [AuthController::class, 'logoutAll']);
     Route::post('refresh-token', [AuthController::class, 'refreshToken']);
     Route::get('search', [AuthController::class, 'search']);
+    Route::delete('/user/delete', [AuthController::class, 'deleteAccount'])->middleware('auth:sanctum');
+
 });

@@ -46,3 +46,13 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/api/refresh-token
 Authorization: Bearer 9|o4iJveIkwMRpQ4X8OftG30gvF9MFq1fTB8Yn1oMY000080cb
 Content-Type: application/json
+
+
+### Eliminar cuenta del usuario
+DELETE http://127.0.0.1:8000/api/user/delete
+Authorization: Bearer 11|vpRdZ1HcDXgmaQiqPCeYhpnghoLh8pqMlvIhDa3Y9cc15841
+Content-Type: application/json
+
+{
+    "password": "contraseña123"
+}
