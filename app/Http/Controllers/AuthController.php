@@ -82,6 +82,40 @@ class AuthController extends Controller
             return $this->sendResponse('Error', $e->getMessage(), 500);
         }
     }
+    public function logoutAll(Request $request)
+    {
+        try {
+            // Elimina todos los tokens del usuario
+            $request->user()->tokens->each(function ($token) {
+                $token->delete();
+            });
+
+            return $this->sendResponse('Logged out from all devices successfully');
+        } catch (\Exception $e) {
+            return $this->sendResponse('Error', $e->getMessage(), 500);
+        }
+    }
+    public function refreshToken(Request $request)
+    {
+        try {
+            // Obtén el usuario autenticado
+            $user = $request->user();
+
+            // Revoca el token anterior
+            $request->user()->tokens->each(function ($token) {
+                $token->delete();
+            });
+
+            // Crea un nuevo token
+            $token = $user->createToken('YourAppName')->plainTextToken;
+
+            return $this->sendResponse('Token refreshed successfully', ['token' => $token]);
+        } catch (\Exception $e) {
+            return $this->sendResponse('Error', $e->getMessage(), 500);
+        }
+    }
+
+
 
     public function search(Request $request)
     {
