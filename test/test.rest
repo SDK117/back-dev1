@@ -1,0 +1,36 @@
+### Registro de usuario (Signup)
+POST http://127.0.0.1:8000/api/register
+Content-Type: application/json
+
+{
+    "name": "Nuevo Usuario",
+    "email": "usuario@example.com",
+    "password": "contraseña123",
+    "password_confirmation": "contraseña123"
+}
+
+### Iniciar sesión de usuario (Login)
+POST http://127.0.0.1:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "usuario@example.com",
+    "password": "contraseña123"
+}
+
+
+
+### Obtener información del usuario autenticado (Get User)
+GET http://127.0.0.1:8000/api/user
+Authorization: Bearer 3|lx8oObu85wiMMWzPefWQaBiGPDpO7PNwF0z20nzTbe5e9677
+
+
+### Cerrar sesión (Logout)
+POST http://127.0.0.1:8000/api/logout
+Authorization: Bearer 2|E51d13Iq0VuOyRt2OOtYm9jQGVT4DvZz1whHg47Edd1d6e1f
+
+
+### búsqueda
+
+GET http://127.0.0.1:8000/api/search?query=Nuevo Usuario
+Authorization: Bearer 4|2E0vWJNXo2JD00t2rGOYIrTcmlXqsmUe8zOByRDk08dec6de
